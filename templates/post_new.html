@@ -1,0 +1,10 @@
+{% extends "_base.html" %} <!-- Heredas del base -->
+
+{%  block content %}
+    <h1>Nuevo post</h1>
+    <form action="" method="post"> <!-- Envia datos de tipos post al servidor-->
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit">Guardar</button>
+    </form>
+{% endblock content%}

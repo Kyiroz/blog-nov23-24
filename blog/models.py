@@ -13,4 +13,4 @@ class Post(models.Model):   #Post es una tabla en la base de datos
         return self.title
 
     def get_absolute_url(self): #Cuando invoque al post detail, quiero que devuelva el id
-        return reverse('post-detail', kwars={'pk': self.pk})
+        return reverse('post-detail', kwargs={'pk': self.pk})
