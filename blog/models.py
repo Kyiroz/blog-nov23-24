@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 class Post(models.Model):   #Post es una tabla en la base de datos
@@ -10,3 +11,6 @@ class Post(models.Model):   #Post es una tabla en la base de datos
  
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self): #Cuando invoque al post detail, quiero que devuelva el id
+        return reverse('post-detail', kwars={'pk': self.pk})
