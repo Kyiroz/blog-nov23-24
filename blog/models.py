@@ -1,7 +1,7 @@
 from django.db import models
 
 # Create your models here.
-class Post(models.Model):
+class Post(models.Model):   #Post es una tabla en la base de datos
     title = models.CharField(max_length=200)
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)    #Cuando se crea un post, se crea un autor
