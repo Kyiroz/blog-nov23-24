@@ -19,5 +19,5 @@ from django.urls import path, include #Include parece que es para agregar las ru
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('blog.urls')) #Esto es para agregar las rutas de las aplicaciones
+    path('', include('blog.urls')) #Esto es para agregar las rutas de las aplicaciones, parece que copia todo lo que esta en el urls.py del Blog
 ]

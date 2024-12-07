@@ -1,6 +1,7 @@
 {% extends "_base.html" %} <!-- Heredas del base -->
 
 {%  block content %}
+    <a href="{% url 'post-create' %}">   <button>   Crear Post   </button>   </a> 
     <ul> <!-- Recorrer los elementos en la base de datos --> <!--post_list es creado en el archivo models.py-->
         {% for item in post_list %}
             <li>
