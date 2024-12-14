@@ -8,6 +8,14 @@
 <body>
     <a href="{% url 'blog-home' %}">  <h1>Blog Nov</h1>  </a>
 <!-- Puedo ponerlo aqui, o en el post list despues del block -->
+
+    <form method="post" action="{% url 'logout' %}">
+        
+        {% csrf_token %}
+        <input type="submit" value="Cerrar Sesion">
+
+    </form>
+
     {%  block content %}
     {%  endblock content %}
 </body>
