@@ -26,4 +26,4 @@ class PostUpdateView(UpdateView):
 class PostDeleteView(DeleteView):
     model = Post
     template_name = "post_delete.html"
-    success_url = reverse_lazy('home') #Al eliminar, te redirecciona a la url home
+    success_url = reverse_lazy('blog-home') #Al eliminar, te redirecciona a la url home

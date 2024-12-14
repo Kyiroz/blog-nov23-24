@@ -10,3 +10,7 @@ class SignUpView(CreateView):
     form_class = UserCreationForm
     success_url = reverse_lazy("login")
     template_name = 'registration/signup.html'
+
+def Home(request): #Recibe una url o una peticion http
+    
+    return render(request, 'home.html') #De acuerdo a la peticion busca el home html?
