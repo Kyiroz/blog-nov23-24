@@ -1,11 +1,38 @@
+<style>
+
+    .cuadrado-post {
+        text-align: center;
+        background-color: rgb(59, 59, 59);
+        margin: 10px;
+        height: 125px;
+        width: 195px;
+        display: inline-block;
+        font-display: red;
+        /* Eliminamos white-space: nowrap; */
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .titulo-post {
+        width: 195px; /* Mismo ancho que .cuadrado-post */
+        /* Otros estilos para titulo-post */
+        background-color: black;
+        color: white;
+        padding-left: 25px;
+        padding-right: 25px;
+      }
+
+</style>
+
 {% extends "_base.html" %} <!-- Heredas del base -->
 
 {%  block content %}
     <a href="{% url 'post-create' %}">   <button>   Crear Post   </button>   </a> 
     <ul> <!-- Recorrer los elementos en la base de datos --> <!--post_list es creado en el archivo models.py-->
         {% for item in post_list %}
-            <li>
-                <a href="{% url 'post-detail' item.pk %}">  {{ item.title }}  </a>
+            <li class="cuadrado-post">
+                <a href="{% url 'post-detail' item.pk %}" class="titulo-post">  {{ item.title }}  </a>
+                <p>{{ item.content }}</p> 
             </li> <!-- Enlista por titulo -->
         {% endfor %}
     </ul>

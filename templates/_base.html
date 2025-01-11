@@ -3,20 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        .body{
+            background-color: gray;
+        }
+        .link-inicio{
+            color: white;
+            background-color: darkblue;
+            border-radius: 8px;
+            margin: 10px;
+            text-align: center;
+        }
+        
+    </style>
+
     <title>Blog de Chotas</title>
 </head>
-<body>
-    <a href="{% url 'blog-home' %}">  <h1>Blog Nov</h1>  </a>
-<!-- Puedo ponerlo aqui, o en el post list despues del block -->
+<body class="body">
+    <a href="{% url 'blog-home' %}"> <!-- Puedo ponerlo aqui, o en el post list despues del block, display: inline-block --> 
+        <h1 class="link-inicio">Blog Nov de Weyes</h1> 
+    </a> 
+   
+    <form method="post" action="{% url 'logout' %}"> 
 
-    <form method="post" action="{% url 'logout' %}">
-        
-        {% csrf_token %}
-        <input type="submit" value="Cerrar Sesion">
+        {% csrf_token %} 
+        <input type="submit" value="Cerrar Sesion"> 
 
-    </form>
+    </form> 
 
-    {%  block content %}
-    {%  endblock content %}
+    {% block content %} 
+    {% endblock content %}
 </body>
 </html>
